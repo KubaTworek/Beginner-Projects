@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Clock</title>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    
+</head>
+<body>
+    <h1>Pomodoro Clock</h1>
+    <div class="time-length">
+        <div class="container-set">
+            <p>Break Length</p>
+            <div class="container-count"><i id="break-down" class="fa fa-arrow-down fa-2x"></i><span id="break-count">5</span><i id="break-up" class="fa fa-arrow-up fa-2x"></i></div>
+        </div>
+        <div class="container-set">
+            <p>Session Length</p>
+            <div class="container-count"><i id="session-down" class="fa fa-arrow-down fa-2x"></i><span id="session-count">25</span><i id="session-up" class="fa fa-arrow-up fa-2x"></i></div>
+        </div>
+    </div>
+    <div class="container-time">
+        <p id="time">Session</p>
+        <p><span id="mins">25</span>:<span id="secs">00</span></p>
+    </div>
+    <div class="container-button">
+        <button id="play">play</button>
+        <button id="pause">pause</button>
+        <button id="restart">restart</button>
+    </div>
+</body>
+</html>
