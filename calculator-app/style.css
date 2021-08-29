@@ -1,0 +1,31 @@
+body {
+  background: #464646;
+
+}
+
+#calculator {
+  opacity: 0.6;
+}
+
+input {
+  background: #00CCCF;
+  border: 0;
+  color: white;
+  padding: 0 10px 0 10px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-align: right;
+}
+
+input:active {
+  border: 0;
+}
+
+button {
+  border: 1px solid white;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: white;
+}

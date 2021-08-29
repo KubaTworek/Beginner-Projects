@@ -1,0 +1,33 @@
+#calculator {
+  width: 300px;
+  height: 400px;
+  margin: auto;
+  margin-top: 100px;
+  display: grid;
+  grid-template-areas:
+      "input input input input"
+      "ac ac del divide"
+      "one two three multiply"
+      "four five six plus"
+      "seven eight nine minus"
+      "dot zero equal equal"
+}
+#input-el {grid-area: input;}
+#ac-btn {grid-area: ac;}
+#del-btn {grid-area: del;}
+#one-btn {grid-area: one;}
+#two-btn {grid-area: two;}
+#three-btn {grid-area: three;}
+#four-btn {grid-area: four;}
+#five-btn {grid-area: five;}
+#six-btn {grid-area: six;}
+#seven-btn {grid-area: seven;}
+#eight-btn {grid-area: eight;}
+#nine-btn{grid-area: nine;}
+#zeor-btn{grid-area: zero;}
+#dot-btn{grid-area: dot;}
+#equal-btn{grid-area: equal;}
+#divide-btn{grid-area: divide;}
+#multiply-btn{grid-area: multiply;}
+#plus-btn{grid-area: plus;}
+#minus-btn{grid-area: minus;}
