@@ -1,5 +1,6 @@
 const btn = document.getElementById('button');
 const inputEl = document.getElementById('input');
+const scoreEl = document.getElementById('score');
 const totalValue = document.getElementById("value");
 const twoFiveEl = document.getElementById("twoFive");
 const tableEl = document.getElementById("table");
@@ -11,6 +12,7 @@ btn.addEventListener('click', () => {
     let value = inputEl.value * 100;
     if(Number.isInteger(value)) {
         totalValue.classList.remove("hidden");
+        scoreEl.classList.remove("hidden");
         tableEl.classList.remove("hidden");
 
         totalValue.innerHTML = `
