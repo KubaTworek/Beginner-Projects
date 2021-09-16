@@ -15,21 +15,19 @@ async function getWeather(city) {
 function createWeatherCard(city) {
     const temp = (city.main.temp - 273.15).toFixed(0);
 
-    const card = document.createElement("div");
-    card.classList.add("weather-card");
-
-    card.innerHTML = `
+    main.innerHTML = `
         <div class="card">
             <div class="name"
                 <h2>${city.name}</h2><small>${city.sys.country}</small>
             </div>
-            <span class="temp">${temp}°C</span>
-            <img src="https://openweathermap.org/img/wn/${city.weather[0].icon}@4x.png"
-            <span class="weather">${city.weather[0].main}</span>
+            <div class="temp">
+                <span>${temp}°C</span>
+                <img src="https://openweathermap.org/img/wn/${city.weather[0].icon}@4x.png"
+                <span>${city.weather[0].main}</span>
+            </div>
         </div>
     `;
 
-    main.append(card);
 }
 
 submit.addEventListener('click', () => {

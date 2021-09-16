@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+body, .search, .card, .temp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+.search {
+  margin-bottom: 5vh;
+}
+
+.search h1 {
+  color: black;
+  text-shadow: 0 0 2px black;
+}
+
+.card {
+  max-width: 300px;
+  background-color: #ddd;
+  border: 1px solid rebeccapurple;
+  border-radius: 20px;
+  box-shadow: 0 0 6px;
+}
+
+.name {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.name small {
+  font-size: 0.7rem;
+}
+
+.temp {
+  margin: 1rem;
+}
+
+.temp img {
+  width: 150px;
+  margin: -10px 0;
+}
