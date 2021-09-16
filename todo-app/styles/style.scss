@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import '_mixins.scss';
+@import '_variables.scss';
+@import '_extendes.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-stack;
+    margin: 0;
+}
+
+.search {
+    @extend %center;
+    margin-bottom: 5vh;
+    h1 {
+        @include fontShadow();
+    }
+}
+
+.todo-list {
+    background-color: #efefef;
+    margin: 0 20vh;
+    border: 1px solid $primary-color;
+    border-radius: 20px;
+    box-shadow: 0 0 6px;
+    ol {
+        padding: 0;
+    }
+    li {
+        display: flex;
+        justify-content: space-between;
+        margin: 15px;
+    }
+}
