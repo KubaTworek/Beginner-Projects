@@ -37,5 +37,3 @@ submit.addEventListener('click', () => {
     const username = input.value;
     getUser(username);
 });
-
-getUser('florinpop17');
