@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import '_mixins.scss';
+@import '_variables.scss';
+@import '_extendes.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @extend %center;
+    font-family: $font-stack;
+    margin: 0;
+}
+
+.describe {
+    margin: 5vh;
+    padding: 2vh;
+    border: dotted 5px black;
+}
+
+.inputs {
+    @extend %center;
+    input {
+        margin-left: 0.5rem;
+    }
+}
+
+.button {
+    @extend %center;
+    button {
+        padding: 0.3rem;
+        font-size: 1.1rem;
+    }
+    p {
+        padding: 0.1rem 0.4rem; 
+        border: 1px solid black;
+    }
+}
