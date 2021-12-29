@@ -1,13 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 body, .search, .card, .temp {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -29,7 +39,8 @@ body {
   background-color: #ddd;
   border: 1px solid rebeccapurple;
   border-radius: 20px;
-  box-shadow: 0 0 6px;
+  -webkit-box-shadow: 0 0 6px;
+          box-shadow: 0 0 6px;
 }
 
 .name {
@@ -49,3 +60,4 @@ body {
   width: 150px;
   margin: -10px 0;
 }
+/*# sourceMappingURL=style.css.map */

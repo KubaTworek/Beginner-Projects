@@ -1,198 +1,180 @@
-const oneEl = document.getElementById('one');
-const twoEl = document.getElementById('two');
-const threeEl = document.getElementById('three');
-const fourEl = document.getElementById('four');
-const fiveEl = document.getElementById('five');
-const sixEl = document.getElementById('six');
-const sevenEl = document.getElementById('seven');
-const eightEl = document.getElementById('eight');
-const nineEl = document.getElementById('nine');
+// elements
+const background = document.querySelector('.background');
+const nameEditor = document.querySelector('.name-editor');
+const gameBoard = document.getElementById('game-board');
+const winnerBoard = document.getElementById('winner-board');
+const boardPlaces = document.querySelectorAll('.place');
+const gameTurn = document.getElementById('game-turn');
+// inputs
+const playerNameInput = document.getElementById('player-name--input');
+//spans
+const playerOneName = document.getElementById('playerOne-name');
+const playerTwoName = document.getElementById('playerTwo-name');
+const warningText = document.getElementById('warning');
+const labelName = document.getElementById('label-name');
+const playerTurn = document.getElementById('player-turn');
+const winner = document.getElementById('winner');
+//buttons
+const editButtonFirst = document.getElementById('edit-button--first');
+const editButtonSecond = document.getElementById('edit-button--second');
+const cancelbutton = document.getElementById('cancel-button');
+const confirmButton = document.getElementById('confirm-button');
+const startGameBtn = document.getElementById('start-button');
 
-let playerOneTurn = true;
 
+// CHANGING NAME
 
-oneEl.addEventListener('click', () => {
-    if(!oneEl.textContent) {
-        oneEl.classList.add('check')
-        if(playerOneTurn) {
-            oneEl.textContent = 'X';
-            playerOneTurn = false;
-        } else {
-            oneEl.textContent = 'O';
-            playerOneTurn = true;
-        }
-        setTimeout(checkWin, 1000);
-    }
-});
+// variables
 
-twoEl.addEventListener('click', () => {
-    if(!twoEl.textContent) {
-        twoEl.classList.add('check')
-        if(playerOneTurn) {
-            twoEl.textContent = 'X';
-            playerOneTurn = false;
-        } else {
-            twoEl.textContent = 'O';
-            playerOneTurn = true;
-        }
-        setTimeout(checkWin, 1000);
-    }
-});
+let playerName;
+let playerEl;
 
-threeEl.addEventListener('click', () => {
-    if(!threeEl.textContent) {
-        threeEl.classList.add('check')
-        if(playerOneTurn) {
-            threeEl.textContent = 'X';
-            playerOneTurn = false;
-        } else {
-            threeEl.textContent = 'O';
-            playerOneTurn = true;
-        }
-        setTimeout(checkWin, 1000);
-    }
-});
+// buttons
 
-fourEl.addEventListener('click', () => {
-    if(!fourEl.textContent) {
-        fourEl.classList.add('check')
-        if(playerOneTurn) {
-            fourEl.textContent = 'X';
-            playerOneTurn = false;
-        } else {
-            fourEl.textContent = 'O';
-            playerOneTurn = true;
-        }
-        setTimeout(checkWin, 1000);
-    }
-});
+editButtonFirst.addEventListener('click', editFirstName);
+editButtonSecond.addEventListener('click', editSecondName);
+cancelbutton.addEventListener('click', cancel);
+confirmButton.addEventListener('click', confirmName);
 
-fiveEl.addEventListener('click', () => {
-    if(!fiveEl.textContent) {
-        fiveEl.classList.add('check')
-        if(playerOneTurn) {
-            fiveEl.textContent = 'X';
-            playerOneTurn = false;
-        } else {
-            fiveEl.textContent = 'O';
-            playerOneTurn = true;
-        }
-        setTimeout(checkWin, 1000);
-    }
-});
+// main functions
 
-sixEl.addEventListener('click', () => {
-    if(!sixEl.textContent) {
-        sixEl.classList.add('check')
-        if(playerOneTurn) {
-            sixEl.textContent = 'X';
-            playerOneTurn = false;
-        } else {
-            sixEl.textContent = 'O';
-            playerOneTurn = true;
-        }
-        setTimeout(checkWin, 1000);
-    }
-});
-
-sevenEl.addEventListener('click', () => {
-    if(!sevenEl.textContent) {
-        sevenEl.classList.add('check')
-        if(playerOneTurn) {
-            sevenEl.textContent = 'X';
-            playerOneTurn = false;
-        } else {
-            sevenEl.textContent = 'O';
-            playerOneTurn = true;
-        }
-        setTimeout(checkWin, 1000);
-    }
-});
-
-eightEl.addEventListener('click', () => {
-    if(!eightEl.textContent) {
-        eightEl.classList.add('check')
-        if(playerOneTurn) {
-            eightEl.textContent = 'X';
-            playerOneTurn = false;
-        } else {
-            eightEl.textContent = 'O';
-            playerOneTurn = true;
-        }
-        setTimeout(checkWin, 1000);
-    }
-});
-
-nineEl.addEventListener('click', () => {
-    if(!nineEl.textContent) {
-            nineEl.classList.add('check')
-        if(playerOneTurn) {
-            nineEl.textContent = 'X';
-            playerOneTurn = false;
-        } else {
-            nineEl.textContent = 'O';
-            playerOneTurn = true;
-        }
-        setTimeout(checkWin, 1000);
-    }
-});
-
-function checkWin() {
-    let one = oneEl.textContent;
-    let two = twoEl.textContent;
-    let three = threeEl.textContent;
-    let four = fourEl.textContent;
-    let five = fiveEl.textContent;
-    let six = sixEl.textContent;
-    let seven = sevenEl.textContent;
-    let eight = eightEl.textContent;
-    let nine = nineEl.textContent;
-    if(one == two && one == three && one) {
-        whoWon();
-        restartGame();
-    }
-    if(four == five && four == six && four) {
-        whoWon();
-        restartGame();
-    }
-    if(seven == eight && seven == nine && seven) {
-        whoWon();
-        restartGame();
-    }
-    if(one == four && one == seven && one) {
-        whoWon();
-        restartGame();
-    }
-    if(two == five && two == eight && two) {
-        whoWon();
-        restartGame();
-    }
-    if(three == six && three == nine && three) {
-        whoWon();
-        restartGame();
-    }
-    if(one == five && one == nine && one) {
-        whoWon();
-        restartGame();
-    }
-    if(three == five && three == seven && three) {
-        whoWon();
-        restartGame();
-    }
-}
-
-function whoWon() {
-    if(playerOneTurn) {
-        alert("Player 2 won!")
+function confirmName() {
+    if(playerNameInput.value.trim()){
+        saveName();
+        changeName(playerEl, playerName);
+        toggleEditBox();
+        warningText.classList.add('hidden');
+        labelName.classList.remove('warning');
+        playerNameInput.classList.remove('warning');
     } else {
-        alert("Player 1 won!")
+        warningText.classList.remove('hidden');
+        labelName.classList.add('warning');
+        playerNameInput.classList.add('warning');
     }
 }
 
-function restartGame() {
-    document.querySelectorAll('.place').forEach((element) => {
-        element.classList.remove('check');
-        element.textContent = "";
-        playerOneTurn = true;
-    })
+function editFirstName() {
+    toggleEditBox();
+    playerEl = playerOneName;
+}
+
+function editSecondName() {
+    toggleEditBox();
+    playerEl = playerTwoName;
+}
+
+function cancel() {
+    toggleEditBox();
+    warningText.classList.add('hidden');
+    labelName.classList.remove('warning');
+    playerNameInput.classList.remove('warning');
+}
+
+
+// help functions
+
+function saveName() {
+    playerName = playerNameInput.value;
+}
+
+function changeName(player, name) {
+    player.textContent = name;
+    playerNameInput.value = '';
+}
+
+function toggleEditBox() {
+    background.classList.toggle("shadowed");
+    nameEditor.classList.toggle("show");
+}
+
+// MAKING GAME
+
+//variables
+let playerNameOne;
+let playerNameTwo;
+let isPlayerOneTurn = true;
+let isFinished = false;
+let isTied = false;
+
+//buttons
+startGameBtn.addEventListener('click', startGame);
+
+//main functions
+function startGame() {
+    if(isFinished){
+        clearBoard();
+        prepareBoard();
+    } else {
+        prepareBoard();
+    }
+}
+
+function prepareBoard() {
+    gameBoard.classList.remove('hidden');
+    gameTurn.classList.remove('hidden');
+    playerTurn.textContent = playerOneName.textContent;
+    playerNameOne = playerOneName.textContent;
+    playerNameTwo = playerTwoName.textContent;
+    for (const boardPlace of boardPlaces){
+        boardPlace.addEventListener('click', makingFunctionalityPlaces);
+    };
+    isPlayerOneTurn = true;
+}
+
+function clearBoard() {
+    isFinished = false;
+    winnerBoard.classList.add('hidden');
+    for (const boardPlace of boardPlaces){
+        boardPlace.classList.remove('finished');
+        boardPlace.classList.remove('tagged');
+        boardPlace.textContent = '';
+    };
+}
+
+function makingFunctionalityPlaces() {
+    this.classList.add('tagged');
+            if(isPlayerOneTurn){
+                this.textContent = 'X';
+                this.removeEventListener('click', makingFunctionalityPlaces);
+                isPlayerOneTurn = false;
+                playerTurn.textContent = playerNameTwo;
+                isWinner(boardPlaces);
+            } else {
+                this.textContent = 'O';
+                this.removeEventListener('click', makingFunctionalityPlaces);
+                isPlayerOneTurn = true;
+                playerTurn.textContent = playerNameOne;
+                isWinner(boardPlaces);
+            }
+}
+
+function isWinner(boardPlace) {
+    if(((boardPlace[0].textContent == boardPlace[1].textContent && boardPlace[1].textContent == boardPlace[2].textContent && boardPlace[1].textContent != '') || (boardPlace[3].textContent == boardPlace[4].textContent && boardPlace[4].textContent == boardPlace[5].textContent && boardPlace[4].textContent != '') || (boardPlace[6].textContent == boardPlace[7].textContent && boardPlace[7].textContent == boardPlace[8].textContent && boardPlace[7].textContent != '') || (boardPlace[0].textContent == boardPlace[3].textContent && boardPlace[3].textContent == boardPlace[6].textContent && boardPlace[3].textContent != '') || (boardPlace[1].textContent == boardPlace[4].textContent && boardPlace[4].textContent == boardPlace[7].textContent && boardPlace[4].textContent != '') || (boardPlace[2].textContent == boardPlace[5].textContent && boardPlace[5].textContent == boardPlace[8].textContent && boardPlace[5].textContent != '') || (boardPlace[0].textContent == boardPlace[4].textContent && boardPlace[4].textContent == boardPlace[8].textContent && boardPlace[4].textContent != '') || (boardPlace[2].textContent == boardPlace[4].textContent && boardPlace[4].textContent == boardPlace[6].textContent) && boardPlace[4].textContent != '')){
+        if(isPlayerOneTurn){
+            endGame(playerNameTwo);
+        } else {
+            endGame(playerNameOne);
+        }
+    } else if (boardPlace[0].classList.contains('tagged') && boardPlace[1].classList.contains('tagged') && boardPlace[2].classList.contains('tagged') && boardPlace[3].classList.contains('tagged') && boardPlace[4].classList.contains('tagged') && boardPlace[5].classList.contains('tagged') && boardPlace[6].classList.contains('tagged') && boardPlace[7].classList.contains('tagged') && boardPlace[8].classList.contains('tagged')) {
+        isTied = true;
+        endGame('Draw');
+    }
+}
+
+function endGame(winGuy) {
+    for (const boardPlace of boardPlaces){
+        boardPlace.removeEventListener('click', makingFunctionalityPlaces);
+    };
+    gameTurn.classList.add('hidden');
+    winnerBoard.classList.remove('hidden');
+    if (isTied) {
+        winner.textContent = winGuy;
+    } else {
+        winner.textContent = 'You won ' + winGuy;
+    }
+    for (const boardPlace of boardPlaces){
+        boardPlace.classList.add('finished');
+    };
+    isFinished = true;
+    isTied = false;
 }

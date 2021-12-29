@@ -5,25 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe Game</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
     
 </head>
 <body>
-    <div class="score">
-        <h1>Tic Tac Toe</h1>
+    <div class="additional-container">
+        <div class="background"></div>
+        <div class="name-editor">
+            <p class="name-editor--text">Choose your name</p>
+            <label for="player-name--input" id="label-name" class="name-editor--label">Player name</label>
+            <input type="text" name="player-name--input" id="player-name--input" class="name-editor--input">
+            <p id="warning" class="hidden">Please enter a valid name!</p>
+            <div class="button-container">
+                <button id="cancel-button">Cancel</button>
+                <button id="confirm-button">Confirm</button>
+            </div>
+        </div>
     </div>
-    <div class="grid">
-        <div class="place" id="one"></div>
-        <div class="place" id="two"></div>
-        <div class="place" id="three"></div>
-        <div class="place" id="four"></div>
-        <div class="place" id="five"></div>
-        <div class="place" id="six"></div>
-        <div class="place" id="seven"></div>
-        <div class="place" id="eight"></div>
-        <div class="place" id="nine"></div>
+    <header>
+        <h1 class="header-title">Play Tic, Tac Toe</h1>
+        <p class="header-describe">Built with HTML, CSS, JavaScript and - of course - lots of love!</p>
+    </header>
+    <main>
+        <div class="name-tags">
+            <div class="name-tag">
+                <p class="player-tag">Player 1</p>
+                <p id="playerOne-name" class="player-name">PLAYER NAME</p>
+                <p class="symbol">X</p>
+                <a id="edit-button--first" class="edit-button">Edit</a>
+            </div>
+            <div class="name-tag">
+                <p class="player-tag">Player 2</p>
+                <p id="playerTwo-name" class="player-name">PLAYER NAME</p>
+                <p class="symbol">O</p>
+                <a id="edit-button--second" class="edit-button">Edit</a>
+            </div>
+        </div>
+        <div class="button-container">
+            <button id="start-button" class="start-button">Start New Game</button>
+        </div>
+    </main>
+    <div id="winner-board"class="hidden">
+        <h2 id="winner" class="winner-board--title">You won Player 1</h2>
+        <p class="winner-board--text">Click "Start New Game" to start a new game!</p>
     </div>
-    <span>Player 1 Turn!</span>
+    <div id="game-turn" class="hidden">
+        <p class="game-turn">It's your turn <span id="player-turn">Player 1</span></p>
+    </div>
+    <div id="game-board" class="hidden">
+        <div class="board">
+            <div class="place"></div>
+            <div class="place"></div>
+            <div class="place"></div>
+            <div class="place"></div>
+            <div class="place"></div>
+            <div class="place"></div>
+            <div class="place"></div>
+            <div class="place"></div>
+            <div class="place"></div>
+        </div>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
