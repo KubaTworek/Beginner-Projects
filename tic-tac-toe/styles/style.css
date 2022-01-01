@@ -26,11 +26,11 @@ header {
   text-align: center;
 }
 
-header .header-title {
+header .header__title {
   margin: 0;
 }
 
-main .name-tags {
+.name-tags {
   max-width: 900px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -43,7 +43,7 @@ main .name-tags {
 }
 
 @media (min-width: 50rem) {
-  main .name-tags {
+  .name-tags {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -51,7 +51,7 @@ main .name-tags {
   }
 }
 
-main .name-tags .name-tag {
+.name-tags .name-tag {
   width: 20rem;
   height: 10rem;
   background-color: #dbcffc;
@@ -63,23 +63,23 @@ main .name-tags .name-tag {
   margin: 1rem auto;
 }
 
-main .name-tags .name-tag .player-tag {
+.name-tags .name-tag .player-tag {
   margin: 0.5rem;
 }
 
-main .name-tags .name-tag .player-name {
+.name-tags .name-tag .player-tagname {
   font-size: 1.2em;
   color: #7141f3;
   letter-spacing: 0.05rem;
   margin: 0.5rem;
 }
 
-main .name-tags .name-tag .symbol {
+.name-tags .name-tag .symbol {
   font-size: 2em;
   margin: 0.5rem;
 }
 
-main .name-tags .name-tag .edit-button {
+.name-tags .name-tag .edit-button {
   color: #7141f3;
   font-weight: normal;
   text-decoration: none;
@@ -88,11 +88,11 @@ main .name-tags .name-tag .edit-button {
   padding: 0.4rem 1.2rem;
 }
 
-main .name-tags .name-tag .edit-button:hover {
+.name-tags .name-tag .edit-button:hover {
   background-color: #c6b1fd;
 }
 
-main .button-container {
+.button-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,7 +101,7 @@ main .button-container {
           justify-content: center;
 }
 
-main .button-container .start-button {
+.button-container #start-button {
   background-color: #7141f3;
   color: #ebebeb;
   font-size: 1.6rem;
@@ -112,7 +112,7 @@ main .button-container .start-button {
   outline: none;
 }
 
-main .button-container .start-button:hover {
+.button-container #start-button:hover {
   background-color: #602bf3;
 }
 
@@ -137,7 +137,7 @@ main .button-container .start-button:hover {
   max-width: 500px;
   display: none;
   position: fixed;
-  background-color: #fafafa;
+  background-color: #ebebeb;
   font-weight: bold;
   text-align: center;
   border-radius: 0.3rem;
@@ -150,35 +150,35 @@ main .button-container .start-button:hover {
   margin: 0.5rem 0;
 }
 
-.additional-container .name-editor .name-editor--label {
+.additional-container .name-editor .name-editor__label {
   display: block;
   font-size: 0.9em;
   margin: 0.2rem 0;
 }
 
-.additional-container .name-editor #label-name.warning {
+.additional-container .name-editor #player-name__label.warning {
   color: #6e0000;
 }
 
-.additional-container .name-editor .name-editor--input {
+.additional-container .name-editor .name-editor__input {
   padding: 0.2rem;
-  border: 1px solid #e1e1e1;
+  border: 1px solid #ebebeb;
   margin: 0;
   outline: none;
 }
 
-.additional-container .name-editor #player-name--input.warning {
+.additional-container .name-editor #player-name__input.warning {
   background-color: #ffdada;
   color: #6e0000;
   border: 1px solid #7141f3;
 }
 
-.additional-container .name-editor #warning {
+.additional-container .name-editor #warning-alert {
   font-size: 0.8em;
   font-weight: normal;
 }
 
-.additional-container .name-editor #warning.hidden {
+.additional-container .name-editor #warning-alert.hidden {
   display: none;
 }
 
@@ -187,7 +187,7 @@ main .button-container .start-button:hover {
 }
 
 .additional-container .name-editor .button-container #cancel-button {
-  background-color: #fafafa;
+  background-color: #ebebeb;
   font-size: 0.8em;
   color: #7141f3;
   padding: 0.3rem 1.2rem;
@@ -204,7 +204,7 @@ main .button-container .start-button:hover {
 .additional-container .name-editor .button-container #confirm-button {
   background-color: #7141f3;
   font-size: 0.8em;
-  color: #fafafa;
+  color: #ebebeb;
   padding: 0.3rem 1.2rem;
   cursor: pointer;
   border-radius: 3px;
@@ -229,7 +229,7 @@ main .button-container .start-button:hover {
   margin: 1rem auto;
 }
 
-#winner-board .winner-board--title {
+#winner-board #winner-board__title {
   font-size: 2em;
 }
 
@@ -271,7 +271,7 @@ main .button-container .start-button:hover {
           align-items: center;
   width: 100px;
   height: 100px;
-  background-color: #baa1ff;
+  background-color: #dbcffc;
   color: #ebebeb;
   font-size: 4rem;
   font-weight: bold;
@@ -284,7 +284,7 @@ main .button-container .start-button:hover {
 }
 
 #game-board .board .place.finished:hover {
-  background-color: #baa1ff;
+  background-color: #dbcffc;
   cursor: default;
 }
 
