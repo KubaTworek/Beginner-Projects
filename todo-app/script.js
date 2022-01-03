@@ -1,48 +1,112 @@
-const addBtn = document.getElementById('add');
-const inputEl = document.getElementById('input')
-const listEl = document.getElementById('list');
-
-const todos = JSON.parse(localStorage.getItem("todos"));
-
-if (todos) {
-    todos.forEach((todo) => {
-        createNewTodo(todo);
-    });
+class Task {
+    constructor(text) {
+        this.text = text;
+    }
 }
 
-addBtn.addEventListener('click', () => {
-    if(inputEl.value) {
-        createNewTodo(inputEl.value);
-        updateLS();
-    };
-});
+class TasksList {
+    activeTasks = [];
+    finishedTasks = [];
+    numberActive = 0;
+    numberFinished = 0;
 
-function createNewTodo(text) {    
-    const todoEl = document.createElement("li");
-    
-    todoEl.innerHTML = `
-        <span class="text">${text}</span><i id="delete" class="fas fa-trash-alt"></i>
-    `
-    listEl.prepend(todoEl);
+    addActive(element) {
+        this.activeTasks.push(element)
+        this.numberActive++;
+        numberOfActive.textContent = this.numberActive;
+    }
 
-    inputEl.value = "";
+    addToFinished(element) {
+        this.finishedTasks.push(element)
+        let pos = this.activeTasks.indexOf(element);
+        this.activeTasks.splice(pos, 1);
+        this.numberFinished++;
+        numberOfFinished.textContent = this.numberFinished;
+        this.numberActive--;
+        numberOfActive.textContent = this.numberActive;
+    }
 
-    const deleteBtn = document.getElementById('delete');
+    removeElement(element) {
+        let pos = this.finishedTasks.indexOf(element);
+        this.finishedTasks.splice(pos, 1);
+        this.numberFinished--;
+        numberOfFinished.textContent = this.numberFinished;
+    }
 
-    deleteBtn.addEventListener('click', () => {
-        todoEl.remove();
-        updateLS();
-    });
+    render() {
+        activeTasksList.innerHTML = ``;
+        finishedTasksList.innerHTML = ``;
+
+        for(let task of this.activeTasks){
+            const taskEl = document.createElement('li');
+            taskEl.className = 'active-task__element task-element';
+            taskEl.innerHTML = `<p>${task.text}</p>`;
+            activeTasksList.appendChild(taskEl);
+            taskEl.addEventListener('click', () => {
+                this.addToFinished(task);
+                this.render();
+            });
+        }
+
+        for(let task of this.finishedTasks){
+            const taskEl = document.createElement('li');
+            taskEl.className = 'finished-task__element task-element';
+            taskEl.innerHTML = `<p>${task.text}</p>`;
+            finishedTasksList.appendChild(taskEl);
+            taskEl.addEventListener('click', () => {
+                this.removeElement(task);
+                this.render();
+            });
+        }
+    }
 }
 
-function updateLS() {
-    const todosText = document.querySelectorAll(".text");
 
-    const todos = [];
+const activeTasksList = document.getElementById('active-tasks__list');
+const finishedTasksList = document.getElementById('finished-tasks__list');
+const addNewTaskBtn = document.getElementById('add-button');
+const inputEl = document.getElementById('input');
+const warningText = document.getElementById('warning-alert');
 
-    todosText.forEach((todo) => {
-        todos.unshift(todo.innerText);
-    });
+const background = document.querySelector('.background');
+const todoEditor = document.querySelector('.name-editor');
+const taskInput = document.getElementById('task-input');
+const cancelBtn = document.getElementById('cancel-button');
+const confirmBtn = document.getElementById('confirm-button');
 
-    localStorage.setItem("todos", JSON.stringify(todos));
-};
+const numberOfActive = document.getElementById('numer-of-active');
+const numberOfFinished = document.getElementById('numer-of-finished');
+
+const tasksList = new TasksList();
+
+addNewTaskBtn.addEventListener('click', toggleEditBox);
+confirmBtn.addEventListener('click', confirmTask);
+cancelBtn.addEventListener('click', cancel);
+
+
+function confirmTask() {
+    if (taskInput.value.trim()) {
+        tasksList.addActive(new Task(taskInput.value));
+        tasksList.render();
+        taskInput.value = '';
+        toggleEditBox();
+        warningText.classList.add('hidden');
+        taskInput.classList.remove('warning');
+    } else {
+        taskInput.value = '';
+        warningText.classList.remove('hidden');
+        taskInput.classList.add('warning');
+    }
+}
+
+function cancel() {
+    taskInput.value = '';
+    toggleEditBox();
+    warningText.classList.add('hidden');
+    taskInput.classList.remove('warning');
+}
+
+function toggleEditBox() {
+    background.classList.toggle("shadowed");
+    todoEditor.classList.toggle("show");
+}

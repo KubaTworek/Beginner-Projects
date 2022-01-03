@@ -6,24 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-do App</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-        />
     <script src="script.js" defer></script>
-    
 </head>
 <body>
-    <div class="search">
-        <h1>To-do App</h1>
-        <div>
-            <input id="input" type="text" autocomplete="off">
-            <button id="add">Add</button>
+    <div class="additional-container">
+        <div class="background"></div>
+        <div class="name-editor">
+            <p class="name-editor__text">What is your to-do?</p>
+            <input type="text" name="task-input" id="task-input" class="name-editor__input">
+            <p id="warning-alert" class="hidden">Please enter a valid todo!</p>
+            <div class="button-container">
+                <button id="cancel-button">Cancel</button>
+                <button id="confirm-button">Confirm</button>
+            </div>
         </div>
     </div>
-    <div class="todo-list">
-        <ol id="list">
-        </ol>
-    </div>
+    <header>
+        <h1 class="main-title">TO-DO LIST</h1>
+    </header>
+    <main>
+        <button id="add-button">Add a new task</button>
+        <section class="tasks-container">
+            <h2 id="active-title" class="tasks-title"><span>ACTIVE TASKS</span><span id="numer-of-active">0</span></h2>
+            <ul id="active-tasks__list" class="tasks-list">
+                
+            </ul>
+        </section>
+        <section class="tasks-container">
+            <h2 id="finished-title" class="tasks-title"><span>FINISHED TASKS</span><span id="numer-of-finished">0</span></h2>
+            <ul id="finished-tasks__list" class="tasks-list">
+        
+            </ul>
+        </section>
+    </main>
+
 </body>
 </html>

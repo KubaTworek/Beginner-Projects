@@ -1,37 +1,172 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import '_mixins.scss';
-@import '_variables.scss';
-@import '_extendes.scss';
+$base-color: rgb(113, 65, 243);
+$base-color-lighter: rgb(219, 207, 252);
+$base-color-lightest: rgb(239, 234, 253);
+$white-color: rgb(235, 235, 235);
+$warning-color: rgb(110, 0, 0);
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    font-family: $font-stack;
+    background-color: $base-color-lightest;
+    font-family: sans-serif;
     margin: 0;
 }
 
-.search {
-    @extend %center;
-    margin-bottom: 5vh;
-    h1 {
-        @include fontShadow();
+header {
+    background-color: $base-color;
+    padding: 2rem;
+    .main-title {
+        font-size: 4rem;
+        text-align:center;
+        margin:0;
     }
 }
 
-.todo-list {
-    background-color: #efefef;
-    margin: 0 20vh;
-    border: 1px solid $primary-color;
-    border-radius: 20px;
-    box-shadow: 0 0 6px;
-    ol {
-        padding: 0;
+main {
+    max-width: 800px;
+    padding: 2rem; 
+    margin: 0 auto;
+    #add-button {
+        width: 100%;        
+        background-color: $base-color-lighter;
+        font-size: 2rem;
+        padding: 1rem;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        &:hover{
+            background-color: $base-color;
+        }
     }
-    li {
-        display: flex;
-        justify-content: space-between;
-        margin: 15px;
+    .tasks-container{
+        .tasks-title {
+            display: flex;
+            justify-content: space-between;
+            background-color: $base-color;
+            color: $white-color;
+            border: 1px solid $base-color;
+            padding: 1rem;
+            margin:0;
+            margin-top: 2rem;
+        }
+        #active-title {        
+        }
+        #finished-title {
+        }
+        .tasks-list {
+            list-style-type: none;
+            border: 1px solid $base-color;
+            padding: 0 1rem;
+            margin:0;
+        }
+        #active-tasks__list {          
+        }
+        #finished-tasks__list {
+        }
+        .task-element {
+            background-color: $base-color-lighter;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+            padding: 0.5rem;
+            margin: 1rem 0;
+            cursor: pointer;
+            p {
+                margin:0;
+            }
+        }
+        #active-task__element { 
+        }
+        #finished-task__element{
+
+        }
+
+    }
+}
+
+
+
+.additional-container {
+    display: flex;
+    justify-content: center;
+    .shadowed {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+    }
+    .name-editor {
+        width: 80%;
+        max-width: 500px;
+        display: none;
+        position: fixed;
+        background-color: $white-color;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 0.3rem;
+        padding: 1rem;
+        margin-top: 10rem;
+        .name-editor--text {
+            font-size: 1.5em;
+            margin: 0.5rem 0;
+        }
+        .name-editor__label {
+            display: block;
+            font-size: 0.9em;
+            margin: 0.2rem 0;
+        }
+        .name-editor__input {
+            padding: 0.2rem;
+            border: 1px solid $white-color;
+            margin: 0;
+            outline: none;
+        }
+        #task-input.warning {
+            background-color: rgb(255, 218, 218);
+            color: $warning-color;
+            border: 1px solid $base-color;
+        }
+        #warning-alert {
+            font-size: 0.8em;
+            font-weight: normal;
+        }
+        #warning-alert.hidden {
+            display: none;
+        }
+        .button-container {
+            margin-top: 1rem;
+            #cancel-button {
+                background-color: $white-color;
+                font-size: 0.8em;
+                color: rgb(113, 65, 243);
+                padding: 0.3rem 1.2rem;
+                cursor: pointer;
+                border-radius: 3px;
+                border: none;
+                outline: none;
+                &:hover {
+                    background-color: rgb(235, 228, 255);
+                }
+            }
+            #confirm-button {
+                background-color: $base-color;
+                font-size: 0.8em;
+                color: $white-color;
+                padding: 0.3rem 1.2rem;
+                cursor: pointer;
+                border-radius: 3px;
+                border: none;
+                outline: none;
+                &:hover {
+                    background-color: rgb(92, 38, 243);
+                }
+            }
+        }
+    }
+    .show {
+        display: block;
     }
 }
