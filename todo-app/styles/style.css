@@ -72,6 +72,20 @@ main .tasks-container .task-element p {
   margin: 0;
 }
 
+main .garbage-container {
+  margin: 2rem auto;
+  width: 100px;
+  height: 100px;
+}
+
+main .garbage-container .garbage {
+  color: red;
+}
+
+main .garbage-container .droppable {
+  color: lightcoral;
+}
+
 .additional-container {
   display: flex;
   justify-content: center;
@@ -86,10 +100,11 @@ main .tasks-container .task-element p {
 
 .additional-container .name-editor {
   width: 80%;
-  max-width: 500px;
+  max-width: 600px;
   display: none;
   position: fixed;
   background-color: #ebebeb;
+  font-size: 1.7rem;
   font-weight: bold;
   text-align: center;
   border-radius: 0.3rem;
@@ -109,7 +124,9 @@ main .tasks-container .task-element p {
 }
 
 .additional-container .name-editor .name-editor__input {
-  padding: 0.2rem;
+  width: 80%;
+  font-size: 0.8em;
+  padding: 0.8rem;
   border: 1px solid #ebebeb;
   margin: 0;
   outline: none;
@@ -131,14 +148,14 @@ main .tasks-container .task-element p {
 }
 
 .additional-container .name-editor .button-container {
-  margin-top: 1rem;
+  margin: 2rem 0 1rem 0;
 }
 
 .additional-container .name-editor .button-container #cancel-button {
   background-color: #ebebeb;
   font-size: 0.8em;
   color: #7141f3;
-  padding: 0.3rem 1.2rem;
+  padding: 0.5rem 1.4rem;
   cursor: pointer;
   border-radius: 3px;
   border: none;
@@ -153,7 +170,7 @@ main .tasks-container .task-element p {
   background-color: #7141f3;
   font-size: 0.8em;
   color: #ebebeb;
-  padding: 0.3rem 1.2rem;
+  padding: 0.5rem 1.4rem;
   cursor: pointer;
   border-radius: 3px;
   border: none;

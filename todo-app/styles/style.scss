@@ -85,6 +85,17 @@ main {
         }
 
     }
+    .garbage-container {
+        margin: 2rem auto;
+        width: 100px;
+        height: 100px;
+        .garbage {
+            color:red;
+        }
+        .droppable{
+            color:lightcoral;
+        }
+    }
 }
 
 
@@ -100,10 +111,11 @@ main {
     }
     .name-editor {
         width: 80%;
-        max-width: 500px;
+        max-width: 600px;
         display: none;
         position: fixed;
         background-color: $white-color;
+        font-size: 1.7rem;
         font-weight: bold;
         text-align: center;
         border-radius: 0.3rem;
@@ -119,7 +131,9 @@ main {
             margin: 0.2rem 0;
         }
         .name-editor__input {
-            padding: 0.2rem;
+            width: 80%;
+            font-size: 0.8em;
+            padding: 0.8rem;
             border: 1px solid $white-color;
             margin: 0;
             outline: none;
@@ -137,12 +151,12 @@ main {
             display: none;
         }
         .button-container {
-            margin-top: 1rem;
+            margin: 2rem 0 1rem 0;
             #cancel-button {
                 background-color: $white-color;
                 font-size: 0.8em;
                 color: rgb(113, 65, 243);
-                padding: 0.3rem 1.2rem;
+                padding: 0.5rem 1.4rem;
                 cursor: pointer;
                 border-radius: 3px;
                 border: none;
@@ -155,7 +169,7 @@ main {
                 background-color: $base-color;
                 font-size: 0.8em;
                 color: $white-color;
-                padding: 0.3rem 1.2rem;
+                padding: 0.5rem 1.4rem;
                 cursor: pointer;
                 border-radius: 3px;
                 border: none;
