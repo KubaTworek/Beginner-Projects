@@ -41,6 +41,10 @@ function startGame() {
 function prepareBoard() {
     thingsToChoose.classList.remove('hidden');
     turnBoard.classList.remove('hidden');
+    isComputer = false;
+    isPlayer = false;
+    isFinished = false;
+    isTied = false;
 }
 
 function clearBoard() {
@@ -71,15 +75,14 @@ function computerChoose() {
 }
 
 function checkWinner() {
-    if(computerChoice.textContent == playerChoice.textContent){
+    if(computerChoice.textContent === playerChoice.textContent){
         isTied = true;
-    } else if((computerChoice.textContent == '✊' && playerChoice.textContent == '✌') || (computerChoice.textContent == '🖐️' && playerChoice.textContent == '✊') || (computerChoice.textContent == '✌' && playerChoice.textContent == '🖐️')) {
+    } else if((computerChoice.textContent === '✊' && playerChoice.textContent === '✌') || (computerChoice.textContent === '🖐️' && playerChoice.textContent === '✊') || (computerChoice.textContent === '✌' && playerChoice.textContent === '🖐️')) {
         isComputer = true;
     } else {
         isPlayer = true;
     }
-    endGame();
-    
+    endGame();  
 }
 
 function endGame() {
