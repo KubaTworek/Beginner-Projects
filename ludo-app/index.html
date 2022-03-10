@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo Game</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="header__title">Play Ludo</h1>
+        <p class="header__describe">Built with HTML, CSS, JavaScript and - of course - lots of love!</p>
+    </header>
+    <main>
+        <div class="button-container">
+            <button id="start-button">Start New Game</button>
+        </div>
+        <div class="game-board">
+            <div class="box red" id="red1"><div class="pawn red"></div></div>
+            <div class="box red" id="red2"><div class="pawn red"></div></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box white" id="40">40</div>
+            <div class="box white" id="1">1</div>
+            <div class="box white" id="2">2</div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box blue" id="blue1"><div class="pawn blue"></div></div>
+            <div class="box blue" id="blue2"><div class="pawn blue"></div></div>
+            <div class="box red" id="red3"><div class="pawn red"></div></div>
+            <div class="box red" id="red4"><div class="pawn red"></div></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box white" id="39">39</div>
+            <div class="box blue" id=""></div>
+            <div class="box white" id="3">3</div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box blue" id="blue3"><div class="pawn blue"></div></div>
+            <div class="box blue" id="blue4"><div class="pawn blue"></div></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box white" id="38">38</div>
+            <div class="box blue" id=""></div>
+            <div class="box white" id="4">4</div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box white" id="37">37</div>
+            <div class="box blue" id=""></div>
+            <div class="box white" id="5">5</div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box white" id="32">32</div>
+            <div class="box white" id="33">33</div>
+            <div class="box white" id="34">34</div>
+            <div class="box white" id="35">35</div>
+            <div class="box white" id="36">36</div>
+            <div class="box blue" id=""></div>
+            <div class="box white" id="6">6</div>
+            <div class="box white" id="7">7</div>
+            <div class="box white" id="8">8</div>
+            <div class="box white" id="9">9</div>
+            <div class="box white" id="10">10</div>
+            <div class="box white" id="31">31</div>
+            <div class="box red" id=""></div>
+            <div class="box red" id=""></div>
+            <div class="box red" id=""></div>
+            <div class="box red" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box green" id=""></div>
+            <div class="box green" id=""></div>
+            <div class="box green" id=""></div>
+            <div class="box green" id=""></div>
+            <div class="box white" id="11">11</div>
+            <div class="box white" id="30">30</div>
+            <div class="box white" id="29">29</div>
+            <div class="box white" id="28">28</div>
+            <div class="box white" id="27">27</div>
+            <div class="box white" id="26">26</div>
+            <div class="box yellow" id=""></div>
+            <div class="box white" id="16">16</div>
+            <div class="box white" id="15">15</div>
+            <div class="box white" id="14">14</div>
+            <div class="box white" id="13">13</div>
+            <div class="box white" id="12">12</div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box white" id="25">25</div>
+            <div class="box yellow" id=""></div>
+            <div class="box white" id="17">17</div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box white" id="24">24</div>
+            <div class="box yellow" id=""></div>
+            <div class="box white" id="18">18</div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box yellow" id="yellow1"><div class="pawn yellow"></div></div>
+            <div class="box yellow" id="yellow2"><div class="pawn yellow"></div></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box white" id="23">23</div>
+            <div class="box yellow" id=""></div>
+            <div class="box white" id="19">19</div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box green" id="green1"><div class="pawn green"></div></div>
+            <div class="box green" id="green2"><div class="pawn green"></div></div>
+            <div class="box yellow" id="yellow3"><div class="pawn yellow"></div></div>
+            <div class="box yellow" id="yellow4"><div class="pawn yellow"></div></div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box white" id="22">22</div>
+            <div class="box white" id="21">21</div>
+            <div class="box white" id="20">20</div>
+            <div class="box hidden" id=""></div>
+            <div class="box hidden" id=""></div>
+            <div class="box green" id="green3"><div class="pawn green"></div></div>
+            <div class="box green" id="green4"><div class="pawn green"></div></div>
+        </div>
+        <div class="turn-container">
+            <h2>Yellow turn!</h2>
+        </div>
+        <div class="dice-container">
+            <div class="dice">
+                <div class="number hidden" id="number1">1</div>
+                <div class="number hidden" id="number2">2</div>
+                <div class="number hidden" id="number3">3</div>
+                <div class="number hidden" id="number4">4</div>
+                <div class="number hidden" id="number5">5</div>
+                <div class="number " id="number6">6</div>
+            </div>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
