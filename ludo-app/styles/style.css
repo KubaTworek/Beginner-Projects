@@ -126,7 +126,3 @@ header .header__title {
   font-size: 4rem;
   margin: auto;
 }
-
-.dice-container .dice .hidden {
-  display: none;
-}
